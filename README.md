@@ -1,2 +1,2 @@
 # somerton-man
-Somrton Man murder mystery code
+Somerton Man murder mystery code
