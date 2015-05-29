@@ -2,9 +2,10 @@
 import java.io.*;
 import java.util.Scanner;
 
-public class FreqAnal2Driver {
+public class FreqAnal2Driver1 { //Originally came with 'FreqAnal2Driver' name
 	public static void main(String[] args) {
-		String[] Names = {"Afrikaans","Alsatian","Anglo-Saxon","Aragonese","Aromanian","Asturian",
+		String[] Names = {"Afrikaans"};//Commented out rest of list
+				/*{"Afrikaans","Alsatian","Anglo-Saxon","Aragonese","Aromanian","Asturian",
 		"Azeri","Basque","Belarian_T","Bislama","Bosinian","Breton","Bunduliwan","Catalan","Cebuano",
 		"Cecarakan_T","Cheyenne","Cornish","Cujoltha_T","Cymraeg","Dakota","Dutch","Esperanto",
 		"Estonian","Fiji_Hindi","Finnish","Folkspraak","French","German","Greenlandic","Haitian","Hausa",
@@ -14,14 +15,14 @@ public class FreqAnal2Driver {
 		"Ojibwe","Paite","Papiamentu","Sami North","Sami South","Samoan","Scottish_Gaelic","Sesotho",
 		"Shona","Somali","Sranan_Tongo","Swahili","Tagalog","Tamasheq","Thai_T","Toki Pona","Tsonga",
 		"Tswana","Turkish","Uab_Meto","Viozian","White_Hmong","Wolof","Xhosa","Zarma","Zulu","English",
-		"Danish"};
+		"Danish"};*/
 		FreqAnal2 FA = new FreqAnal2();
 		BufferedReader file = null;
 		int[] array = null;
 		
 		for(int i=0; i <Names.length; i++) {
 				file = FA.ReadFile(Names[i]);
-				array = FA.FreqAnal(file);
+				array = FA.FreqAnal2(file); //FreqAnal -> FreqAnal2
 				FA.OutputFile(Names[i], array);
 		}
 	}

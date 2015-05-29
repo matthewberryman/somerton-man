@@ -17,7 +17,7 @@ public class FreqAnal2 {
 		return file;
 	}
 	
-	public int[] FreqAnal(BufferedReader file) {
+	public int[] FreqAnal(BufferedReader file) { // Changed 'FreqAnal' to 'FreqAnal2'????
 	    int[] arr = new int[26];
 	    int sum = 0;
 	    for(int i = 0;i< 26;i++) {

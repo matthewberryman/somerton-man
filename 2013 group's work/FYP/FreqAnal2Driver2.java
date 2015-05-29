@@ -2,9 +2,10 @@
 import java.io.*;
 import java.util.Scanner;
 
-public class FreqAnal2Driver {
+public class FreqAnal2Driver2 { //Changed 'FreqAnal2Driver' to 'FreqAnal2Driver2'
 	public static void main(String[] args) {
-		String[] Names = {"Afrikaans","Alsatian","Anglo-Saxon","Aragonese","Aromanian","Asturian",
+		String[] Names = {"Afrikaans"};
+		/*,"Alsatian","Anglo-Saxon","Aragonese","Aromanian","Asturian",
 		"Azeri","Basque","Belarian_T","Bislama","Bosinian","Breton","Bunduliwan","Catalan","Cebuano",
 		"Cecarakan_T","Cheyenne","Cornish","Cujoltha_T","Cymraeg","Dakota","Dutch","Esperanto",
 		"Estonian","Fiji_Hindi","Finnish","Folkspraak","French","German","Greenlandic","Haitian","Hausa",
@@ -14,7 +15,7 @@ public class FreqAnal2Driver {
 		"Ojibwe","Paite","Papiamentu","Sami North","Sami South","Samoan","Scottish_Gaelic","Sesotho",
 		"Shona","Somali","Sranan_Tongo","Swahili","Tagalog","Tamasheq","Thai_T","Toki Pona","Tsonga",
 		"Tswana","Turkish","Uab_Meto","Viozian","White_Hmong","Wolof","Xhosa","Zarma","Zulu","English",
-		"Danish"};
+		"Danish"};*/
 		FreqAnal2 FA = new FreqAnal2();
 		BufferedReader file = null;
 		int[] array = null;

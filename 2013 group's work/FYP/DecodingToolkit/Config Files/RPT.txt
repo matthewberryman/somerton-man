@@ -1,0 +1,4 @@
+This is an example text document.
+You could use this as a key for a one time pad decrypt scheme.
+abcdefghijlkmnopqrstuvwxyz
+Have fun!
