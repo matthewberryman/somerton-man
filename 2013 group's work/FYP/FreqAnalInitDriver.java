@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class FreqAnalInitDriver {
 	public static void main(String[] args) {
-		String[] Names = {"Zapoteco_44"};
+		String[] Names = {"ThomasHardy"};
 		/*{"Abkhaz", "Achehnese", "Achuar Shiwiar", "Afaan Oromo", "Afrikaans", "Aguaruna", "Albanian", "All_FAI",
 		"Altay", 
 		"Amahuaca", 
