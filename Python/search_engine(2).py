@@ -55,6 +55,8 @@ for element in d:
 	for letter in input.upper().split():
     		initialism += letter[0]
 	#initdictionary[initialism].append() = gram
+	#######initdictionary[initialism].append(gram)
+	#initdictionary.append(initialism,gram)
 	initdictionary[initialism] = gram
 	#print "dictionary item %d is: " % (n)# + dictionary[n]
 	#class initialism(gram):
