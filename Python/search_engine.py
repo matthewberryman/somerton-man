@@ -1,63 +1,26 @@
-import csv
-with open('5-gram_aa_sample.txt', 'r') as file:
-	reader = csv.reader(file, delimiter="\t") # delimiter takes the one character string \t representing tab to specify the field separator
-	d = list(reader) # creates a list in variable d containing the elements in reader
+import csv, sys
 
-"""item1 = d[0] # moves up and down
-element1 = item1[2] # moves left and right
-print element1
+initialisms_of_interest = dict()
+initialisms = set()
 
-print type(element1)"""
+for line in open(sys.argv[1]):
+	initialisms.add(line.rstrip())
 
+for initialism in initialisms:
+	initialisms_of_interest[initialism] = open('matches_'+initialism+'.txt','w')
 
+reader = csv.reader(sys.stdin, delimiter="\t") # delimiter takes the one character string \t representing tab to specify the field separator
 
-n=0
-gramprev = 'string'
-dictionary = dict()
-countintprev = 0
+for row in reader:
+	ngram = row[0].rstrip().split()
+	initialism = ''
+	for word in ngram:
+		initialism += word[0].upper()
+	print(initialism)
+	#for x in initialisms_of_interest:
+	#	print(x)
+	if initialism in initialisms_of_interest:
+		print(' '.join(str(word) for word in ngram),file=initialisms_of_interest[initialism])
 
-for element in d:
-	item = d[n]
-	#print "item %d is %s" % (n, item)
-	gram = item[0]
-	#print "gram %d is %s" % (n, gram)
-	
-	if gram == gramprev:
-		countint = countintprev + int(item[2])
-		#print "count %d is %d" % (n, countint)
-		
-		
-	else:
-		count = item[2]
-		countint = int(count)
-		#print "count %d is %d" % (n, countint)
-	
-	countintprev = countint
-	gramprev = gram
-
-	dictionary[gram] = countint
-	#print "dictionary item %d is: " % (n)# + dictionary[n]
-	
-	n=n+1
-	
-print dictionary['AA and BB are the']
-	
-
-
-item1 = d[0] # moves up and down
-gram = item1[0] # moves left and right
-print gram
-
-input = gram
-initialism = ""
-for letter in input.upper().split():
-    initialism += letter[0]
-print initialism
-
-#initdictionary[initialism]=gram
-"""#Reference:
-input = "Self contained underwater breathing apparatus"
-output = ""
-for i in input.upper().split():
-    output += i[0]
-print output"""
+for file_handle in initialisms_of_interest.items():
+	file_handle[1].close()
