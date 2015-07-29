@@ -16,7 +16,7 @@ for row in reader:
 	initialism = ''
 	for word in ngram:
 		initialism += word[0].upper()
-	print(initialism)
+#	print(initialism)
 	#for x in initialisms_of_interest:
 	#	print(x)
 	if initialism in initialisms_of_interest:
