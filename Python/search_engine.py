@@ -11,6 +11,7 @@ initialisms = set()
 if len(sys.argv) < 2:
 	print('Usage: python3 search_engine.py initialisms_file.txt')
 	print('  where the initialisms file contains initialisms of interest (all of the same length)')
+	exit(1)
 
 # Read the initialisms in
 for line in open(sys.argv[1]):

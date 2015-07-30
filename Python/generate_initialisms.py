@@ -4,10 +4,11 @@ import sys
 
 initialisms = set() # Set for storing unique initialisms
 
-if len(sys.argv) < 2:
+if len(sys.argv) < 3:
   print('Usage: python3 generate_initialisms.py length file1.txt .. filen.txt')
   print('  where length = length of initialisms to be found in code files')
   print('  file1.txt .. filen.txt')
+  exit(1)
 
 # Read the length of the initialisms to generate from the command line
 length = int(sys.argv[1])
