@@ -1,0 +1,5 @@
+     39 Abbot_NOUN of_ADP Inchaffray_NOUN walked_VERB through_ADP
+     39 Abbot of Inchaffray walked through
+     37 abdominal_ADJ operation_NOUN in_ADP which_DET the_DET
+     45 abdominal_ADJ operations_NOUN in_ADP which_DET the_DET
+     
