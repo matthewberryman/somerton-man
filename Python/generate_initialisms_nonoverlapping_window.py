@@ -20,7 +20,7 @@ for codefile in sys.argv[2:]:
   for line in open(codefile):
     initialism += line.rstrip()
   # Use a sliding window to find the initialisms...
-  for i in range(0,len(initialism)-length+1,len(initialism)):
+  for i in range(0,len(initialism)-length+1,length):
     # ...and add them to the set. Using a set means we only store each unique initialism once only.
     initialisms.add(initialism[i:i+length].upper()) # Conver to upper case for consistency with search_engine.py
 
