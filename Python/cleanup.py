@@ -3,8 +3,9 @@
 import sys, csv
 
 if len(sys.argv) < 2:
-	print('Usage: python3 search_engine.py initialisms_file.txt')
-	print('  where the initialisms file contains initialisms of interest (all of the same length)')
+	print('Usage: python3 cleanup.py file_to_be_cleaned.txt')
+	print('  where the file to be cleaned contains ngrams.')
+	print('  This code removes the word type from ngrams.')
 	exit(1)
 reader = csv.reader(open(sys.argv[1],'r'), delimiter=" ") # delimiter takes the one character string \t representing tab to specify the field separator
 
