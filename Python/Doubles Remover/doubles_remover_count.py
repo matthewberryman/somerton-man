@@ -1,8 +1,8 @@
 import csv
-with open('doubles_test.txt', 'r') as file:
+with open('output_5_clean.txt', 'r') as file:
 	reader = csv.reader(file, delimiter=" ") # delimiter takes the one character string \t representing tab to specify the field separator
 	d = list(reader) # creates a list in variable d containing the elements in reader
-output = open('doubles_test_output.txt', 'w')
+output = open('output_5_count.txt', 'w')
 
 n=0
 wordlineprev = ''
@@ -67,7 +67,7 @@ for element in d:
 			
 		n=n+1
 
-for key in sorted(dict, key=str.lower):
-    output.write(str(dict[key])+key+'\n')
+for key, value in sorted(dict.iteritems(), key=lambda (v,k): (k,v), reverse=True):
+	output.write(str(dict[key])+key+'\n')
 
 output.close()
