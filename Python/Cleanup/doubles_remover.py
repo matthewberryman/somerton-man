@@ -14,11 +14,13 @@ dict = {}
 for element in d:
 	line = d[n]
 	num1= line[4]
+	num2= line[5]
+	num3= line[6]
 	wordline=''
 	wordsprev=''
 	
 	if num1.isdigit():
-		count=int(line[4])
+		count=int(num1)
 		
 		for p in range(5,len(line)):
 			word=line[p]
@@ -28,16 +30,17 @@ for element in d:
 		if wordline==wordlineprev:
 			sum=count+countprev
 			dict[wordline]=sum
+			countprev=sum
 		
 		else: 
 			dict[wordline]=count
-
+			countprev=count
+			
 		wordlineprev=wordline
-		countprev=count
 		n=n+1
 		
-	else:
-		count=int(line[5])
+	elif num2.isdigit():
+		count=int(num2)
 
 		for p in range(6,len(line)):
 			word=line[p]
@@ -47,12 +50,33 @@ for element in d:
 		if wordline==wordlineprev:
 			sum=count+countprev
 			dict[wordline]=sum
-		
+			countprev=sum		
+			
 		else: 
 			dict[wordline]=count
+			countprev=count		
+				
+		wordlineprev=wordline
+		n=n+1
+
+	else:
+		count=int(num3)
+
+		for p in range(7,len(line)):
+			word=line[p]
+			wordline=wordsprev+' '+word
+			wordsprev=wordline
+	
+		if wordline==wordlineprev:
+			sum=count+countprev
+			dict[wordline]=sum
+			countprev=sum
+					
+		else: 
+			dict[wordline]=count
+			countprev=count
 
 		wordlineprev=wordline
-		countprev=count
 		n=n+1
 
 for key in dict:
