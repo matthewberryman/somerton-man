@@ -2,7 +2,7 @@ import csv
 with open('doubles_test.txt', 'r') as file:
 	reader = csv.reader(file, delimiter=" ") # delimiter takes the one character string \t representing tab to specify the field separator
 	d = list(reader) # creates a list in variable d containing the elements in reader
-output = open('output_5_final.txt', 'w')
+output = open('doubles_test_output.txt', 'w')
 
 n=0
 wordlineprev = ''
