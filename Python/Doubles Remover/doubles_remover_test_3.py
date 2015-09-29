@@ -1,8 +1,8 @@
 import csv
-with open('doubles_test.txt', 'r') as file:
+with open('output_5_clean.txt', 'r') as file:
 	reader = csv.reader(file, delimiter=" ") # delimiter takes the one character string \t representing tab to specify the field separator
 	d = list(reader) # creates a list in variable d containing the elements in reader
-output = open('doubles_test_output.txt', 'w')
+output = open('output_5_final.txt', 'w')
 
 n=0
 wordlineprev = ''
@@ -26,13 +26,17 @@ for element in d:
 			word=line[p]
 			wordline=wordsprev+' '+word
 			wordsprev=wordline
+	
+		if wordline==wordlineprev:
+			sum=count+countprev
+			dict[wordline]=sum
+			countprev=sum
 		
-		if wordline in dict:
-			dict[wordline]=(dict[wordline]+count)
-			
-		else:
+		else: 
 			dict[wordline]=count
+			countprev=count
 			
+		wordlineprev=wordline
 		n=n+1
 		
 	elif num2.isdigit():
@@ -42,13 +46,17 @@ for element in d:
 			word=line[p]
 			wordline=wordsprev+' '+word
 			wordsprev=wordline
-
-		if wordline in dict:
-			dict[wordline]=(dict[wordline]+count)
+	
+		if wordline==wordlineprev:
+			sum=count+countprev
+			dict[wordline]=sum
+			countprev=sum		
 			
-		else:
+		else: 
 			dict[wordline]=count
-			
+			countprev=count		
+				
+		wordlineprev=wordline
 		n=n+1
 
 	else:
@@ -59,12 +67,16 @@ for element in d:
 			wordline=wordsprev+' '+word
 			wordsprev=wordline
 	
-		if wordline in dict:
-			dict[wordline]=(dict[wordline]+count)
-			
-		else:
+		if wordline==wordlineprev:
+			sum=count+countprev
+			dict[wordline]=sum
+			countprev=sum
+					
+		else: 
 			dict[wordline]=count
-			
+			countprev=count
+
+		wordlineprev=wordline
 		n=n+1
 
 for key in sorted(dict, key=str.lower):
