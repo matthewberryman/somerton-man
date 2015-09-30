@@ -1,8 +1,8 @@
 import csv
-with open('output_1_clean.txt', 'r') as file:
-	reader = csv.reader(file, delimiter=" ") # delimiter takes the one character string \t representing tab to specify the field separator
+with open('output_5_clean.txt', 'r') as file: # specifies file input
+	reader = csv.reader(file, delimiter=" ") # delimiter takes the one character string " " representing a space to specify the field separator
 	d = list(reader) # creates a list in variable d containing the elements in reader
-output = open('output_1_alpha.txt', 'w')
+output = open('output_5_alpha.txt', 'w') # specifies file output 
 
 n=0
 wordlineprev = ''
@@ -11,7 +11,7 @@ wordline = ''
 countprev = 0
 dict = {}
 
-for element in d:
+for element in d: #iterates through each line in the list
 	line = d[n]
 	num1= line[4]
 	num2= line[5]
@@ -19,55 +19,55 @@ for element in d:
 	wordline=''
 	wordsprev=''
 	
-	if num1.isdigit():
+	if num1.isdigit(): # checks position of count for number of years each entry occurs
 		count=int(num1)
 		
-		for p in range(5,len(line)):
+		for p in range(5,len(line)): # iterates onwards after number position to capture the remaining text as a string
 			word=line[p]
 			wordline=wordsprev+' '+word
 			wordsprev=wordline
 		
-		if wordline in dict:
+		if wordline in dict: # adds count to existing count if dictionary key already exists
 			dict[wordline]=(dict[wordline]+count)
 			
-		else:
+		else: # adds new key to dictionary and assigns its initial count value
 			dict[wordline]=count
 			
 		n=n+1
 		
-	elif num2.isdigit():
+	elif num2.isdigit(): # checks position of count for number of years each entry occurs
 		count=int(num2)
 
-		for p in range(6,len(line)):
+		for p in range(6,len(line)): # iterates onwards after number position to capture the remaining text as a string
 			word=line[p]
 			wordline=wordsprev+' '+word
 			wordsprev=wordline
 
-		if wordline in dict:
+		if wordline in dict: # adds count to existing count if dictionary key already exists
 			dict[wordline]=(dict[wordline]+count)
 			
-		else:
+		else: # adds new key to dictionary and assigns its initial count value
 			dict[wordline]=count
 			
 		n=n+1
 
-	else:
+	else:  # checks position of count for number of years each entry occurs
 		count=int(num3)
 
-		for p in range(7,len(line)):
+		for p in range(7,len(line)): # iterates onwards after number position to capture the remaining text as a string
 			word=line[p]
 			wordline=wordsprev+' '+word
 			wordsprev=wordline
 	
-		if wordline in dict:
+		if wordline in dict: # adds count to existing count if dictionary key already exists
 			dict[wordline]=(dict[wordline]+count)
 			
-		else:
+		else: # adds new key to dictionary and assigns its initial count value
 			dict[wordline]=count
 			
 		n=n+1
-
-for key in sorted(dict, key=str.lower):
+		
+for key in sorted(dict, key=str.lower): # iterates through dictionary and outputs to text file in alphabetical order of key
     output.write(str(dict[key])+key+'\n')
 
 output.close()
