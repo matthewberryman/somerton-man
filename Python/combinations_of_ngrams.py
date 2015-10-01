@@ -2,10 +2,17 @@
 
 import sys, itertools
 
-
+# 5M_2W
 code_segments = [ 'WRGOA', 'BABDM', 'LIAOI', 'WTBIM', 'PANET', 'PMLIA', 'BOAIA', 'QCITT', 'MTSAM', 'STGAB' ]
-#code_segments = [ 'WRGOA', 'BABDM', 'LIAOI', 'WTBIM', 'PANET', 'PMLIA', 'BOAIA', 'QCITT', 'MTSAM', 'STGAB' ]
-#code_segments = [ 'WRGOA', 'BABDM', 'LIAOI', 'WTBIM', 'PANET', 'PMLIA', 'BOAIA', 'QCITT', 'MTSAM', 'STGAB' ]
+
+# 6M_1W_v1
+#code_segments = [ 'WRGOA', 'BABDM', 'LIAOI', 'MTBIM', 'PANET', 'PMLIA', 'BOAIA', 'QCITT', 'MTSAM', 'STGAB' ]
+
+# 6M_1W_v2
+#code_segments = [ 'MRGOA', 'BABDM', 'LIAOI', 'WTBIM', 'PANET', 'PMLIA', 'BOAIA', 'QCITT', 'MTSAM', 'STGAB' ]
+
+# 7M
+#code_segments = [ 'MRGOA', 'BABDM', 'LIAOI', 'MTBIM', 'PANET', 'PMLIA', 'BOAIA', 'QCITT', 'MTSAM', 'STGAB' ]
 
 filenames = list()
 for code in code_segments:
